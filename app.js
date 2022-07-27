@@ -87,11 +87,9 @@ const handleClick = (letter) => {
         }
         if (letter === 'ENTER') {
             checkRow()
-            console.log(guessRows)
             return
         }
         addLetter(letter)
-        console.log(guessRows)
     }
 }
 
@@ -103,7 +101,6 @@ const addLetter = (letter) => {
     guessRows[currentRow][currentTile] = letter
     tile.setAttribute('data', letter)
     currentTile++
-    console.log(guessRows)
 }
 }
 
@@ -181,7 +178,6 @@ const flipTile = () => {
 
     guess.forEach((guess, index) => {
         if (guess.letter == wordle[index]) {
-            console.log(guess.letter)
             guess.color = 'green-overlay'
             checkWordle = checkWordle.replace(guess.letter, '')
         }
